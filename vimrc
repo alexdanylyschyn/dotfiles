@@ -69,3 +69,8 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+" Netrw settings
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+let g:netrw_browse_split = 4

@@ -15,6 +15,7 @@
     ~/.hammerspoon: hammerspoon
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
+    ~/.vim/pack/dist/start: vim/pack
     ~/.zshrc: zshrc
 
 - create:
@@ -40,3 +41,4 @@
         stdin: true
         stdout: true
         stderr: true
+    - vim -c "helptags ALL"
