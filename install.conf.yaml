@@ -6,22 +6,22 @@
 - clean: ['~', '~/.config']
 
 - link:
-  ~/Brewfile: Brewfile
-  ~/.config/kitty: kitty
-  ~/.config/raycast.config: raycast.config
-  ~/.config/starshop.toml: starship.toml
-  ~/.config/yabai: yabai
-  ~/.dotfiles: ''
-  ~/.hammerspoon: hammerspoon
-  ~/.gitconfig: gitconfig
-  ~/.vimrc: vimrc
-  ~/.zshrc: zshrc
+    ~/Brewfile: Brewfile
+    ~/.config/kitty: kitty
+    ~/.config/raycast.config: raycast.config
+    ~/.config/starshop.toml: starship.toml
+    ~/.config/yabai: yabai
+    ~/.dotfiles: ''
+    ~/.hammerspoon: hammerspoon
+    ~/.gitconfig: gitconfig
+    ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
 
 - create:
-  - ~/Screenshots
+    - ~/Screenshots
   
 - shell:
-  - git submodule update --init --recursive
-  - ./macos.sh
-  - ./brew.sh
-  - ./ohmyzsh.sh
+    - git submodule update --init --recursive
+    - ./macos.sh
+    - ./brew.sh
+    - ./ohmyzsh.shfix
