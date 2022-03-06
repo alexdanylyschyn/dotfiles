@@ -22,6 +22,18 @@
   
 - shell:
     - git submodule update --init --recursive
-    - ./macos.sh
-    - ./brew.sh
-    - ./ohmyzsh.shfix
+    - 
+        command: source ~/.dotfiles/macos.sh
+        stdin: true
+        stdout: true
+        stderr: true
+    - 
+        command: source ~/.dotfiles/brew.sh
+        stdin: true
+        stdout: true
+        stderr: true
+    -
+        command: source ~/.dotfiles/ohmyzsh.sh
+        stdin: true
+        stdout: true
+        stderr: true
