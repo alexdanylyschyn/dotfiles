@@ -1,3 +1,15 @@
-- clean: []
-- link: {}
-- shell: []
+- clean: ['~', '~/.config']
+- link:
+  ~/Brewfile:
+  ~/.config/kitty: kitty
+  ~/.config/raycast.config: raycast.config
+  ~/.config/starshop.toml: starship.toml
+  ~/config/yabai: yabai
+  ~/.gitconfig:
+  ~/.vimrc:
+  ~/.zshrc:
+- create:
+  - ~/Screenshots
+- shell:
+  - ./brew.sh
+  - ./ohmyzsh.sh
