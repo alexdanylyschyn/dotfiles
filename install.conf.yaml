@@ -1,17 +1,27 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
 - clean: ['~', '~/.config']
+
 - link:
-  ~/Brewfile:
+  ~/Brewfile: Brewfile
   ~/.config/kitty: kitty
   ~/.config/raycast.config: raycast.config
   ~/.config/starshop.toml: starship.toml
-  ~/config/yabai: yabai
-  ~/.hammerspoon:
-  ~/.gitconfig:
-  ~/.vimrc:
-  ~/.zshrc:
+  ~/.config/yabai: yabai
+  ~/.dotfiles: ''
+  ~/.hammerspoon: hammerspoon
+  ~/.gitconfig: gitconfig
+  ~/.vimrc: vimrc
+  ~/.zshrc: zshrc
+
 - create:
   - ~/Screenshots
+  
 - shell:
+  - git submodule update --init --recursive
   - ./macos.sh
   - ./brew.sh
   - ./ohmyzsh.sh
