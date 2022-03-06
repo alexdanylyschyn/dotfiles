@@ -11,5 +11,6 @@
 - create:
   - ~/Screenshots
 - shell:
+  - ./macos.sh
   - ./brew.sh
   - ./ohmyzsh.sh
