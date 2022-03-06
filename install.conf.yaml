@@ -5,6 +5,7 @@
   ~/.config/raycast.config: raycast.config
   ~/.config/starshop.toml: starship.toml
   ~/config/yabai: yabai
+  ~/.hammerspoon:
   ~/.gitconfig:
   ~/.vimrc:
   ~/.zshrc:
