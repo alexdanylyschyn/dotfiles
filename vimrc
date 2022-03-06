@@ -52,6 +52,14 @@ set clipboard=unnamed
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
+" Don't use swap files.  Move other files to ~/.vim
+set swapfile!
+set backupdir+=~/.vim/backup//
+if exists('&undofile')
+	set undodir=~/.vim/undo//
+	set undofile
+endif
+
 " Automatic commands
 if has("autocmd")
 	" Enable file type detection

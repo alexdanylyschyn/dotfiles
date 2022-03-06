@@ -19,6 +19,9 @@
 
 - create:
     - ~/Screenshots
+    - ~/.vim
+    - ~/.vim/backups
+    - ~/.vim/undo
   
 - shell:
     - git submodule update --init --recursive
