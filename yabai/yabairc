@@ -1,0 +1,148 @@
+#!/usr/bin/env bash
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# ====== Variables =============================
+
+gaps_top="6"
+gaps_bottom="6"
+gaps_left="6"
+gaps_right="6"
+gaps_inner="6"
+
+#normal_border_color="010101"
+#focused_border_color="808080"
+#preselect_border_color="2d74da"
+
+# ====== Tiling settings =======================
+
+yabai -m config layout                      bsp
+
+
+yabai -m config top_padding                 "${gaps_top}"
+yabai -m config bottom_padding              "${gaps_bottom}"
+yabai -m config left_padding                "${gaps_left}"
+yabai -m config right_padding               "${gaps_right}"
+yabai -m config window_gap                  "${gaps_inner}"
+
+yabai -m config mouse_follows_focus         off
+yabai -m config focus_follows_mouse         off
+
+yabai -m config mouse_modifier              alt
+yabai -m config mouse_action1               move
+yabai -m config mouse_action2               resize
+
+yabai -m config window_topmost              off
+yabai -m config window_opacity              off
+yabai -m config window_shadow               float
+
+yabai -m config active_window_opacity       1.0
+yabai -m config normal_window_opacity       0.9
+yabai -m config split_ratio                 0.5
+yabai -m config auto_balance                off
+
+# ====== Space Settings ========================
+
+yabai -m config --space 1 layout float
+yabai -m config --space 3 layout stack
+# yabai -m config --space 6 layout stack
+
+yabai -m space 1 --label General
+yabai -m space 2 --label Files
+yabai -m space 3 --label IDE
+yabai -m space 4 --label Browser
+yabai -m space 5 --label Dev
+yabai -m space 6 --label Messages
+yabai -m space 7 --label Productivity
+
+
+# ====== Border settings =======================
+
+yabai -m config window_border               off
+#yabai -m config window_border_width         1
+#yabai -m config active_window_border_color  "0xE0${focused_border_color}"
+# yabai -m config insert_window_border_color  "0xE0${preselect_border_color}"
+#yabai -m config normal_window_border_color  "0x00${normal_border_color}"
+
+# ====== List of rules =========================
+
+# ======== Management Rules ====================
+
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
+yabai -m rule --add label="App Store" app="^App Store$" manage=off
+yabai -m rule --add label="Installer" app="^Installer$" manage=off
+yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
+yabai -m rule --add label="KeeWeb" app="^KeeWeb$" manage=off
+yabai -m rule --add label="Calculator" app="^Calculator$" manage=off
+yabai -m rule --add label="Dictionary" app="^Dictionary$" manage=off
+yabai -m rule --add label="mpv" app="^mpv$" manage=off
+yabai -m rule --add label="Keka" app="^Keka$" manage=off
+yabai -m rule --add label="TeamViewer" app="^TeamViewer$" manage=off
+yabai -m rule --add label="Transmission" app="^Transmission$" manage=off
+yabai -m rule --add label="VirtualBox" app="^VirtualBox$" manage=off
+yabai -m rule --add label="BetterTouchTool" app="^BetterTouchTool$" manage=off
+yabai -m rule --add label="Postbox" app="^Postbox$" title="^(General|Accounts|Display|Composition|Privacy|Security|Attachments|Advanced)$" manage=off
+yabai -m rule --add label="Keychain Access" app="^Keychain Access$" manage=off
+yabai -m rule --add label="SafeInCloud Password Manager" app="^SafeInCloud Password Manager$" manage=off
+yabai -m rule --add label="JetBrains Toolbox" app="^JetBrains Toolbox$" manage=off
+yabai -m rule --add label="Preview" app="^Preview$" manage=off
+yabai -m rule --add label="Dash" app="^Dash$" manage=off
+yabai -m rule --add label="Todoist" app="^Todoist$" title="^Preferences$" manage=off
+yabai -m rule --add label="Bartender" app="^Bartender$" manage=off
+yabai -m rule --add label="Authy" app="^Authy Desktop$" manage=off
+yabai -m rule --add label="TimeMachine" app="^Time Machine$" manage=off
+yabai -m rule --add label="Surfshark" app="^Surfshark$" manage=off
+yabai -m rule --add label="LuLu" app="^LuLu$" manage=off
+yabai -m rule --add label="LuLu" app="^WindowSwitcher$" manage=off
+yabai -m rule --add label="Nova" app="^Nova$" title="^Launcher$" manage=off
+yabai -m rule --add label="Browserosaurus" app="^Browserosaurus$" manage=off
+yabai -m rule --add label="FaceTime" app="^FaceTime$" manage=off
+
+# ======== App to Space Management ==============
+
+# General
+yabai -m rule --add app="^Spotify$" space="^General"
+
+# Files
+yabai -m rule --add app="^Finder$" space="^Files"
+yabai -m rule --add app="^Transmit$" space="^Files"
+
+# IDE
+# yabai -m rule --add app="^Code$" space="^IDE"
+
+# Browser
+# yabai -m rule --add app="^Google Chrome$" space="^Browser"
+# yabai -m rule --add app="^Safari$" space="^Browser"
+
+# Dev
+yabai -m rule --add app="^kitty$" space="^Dev"
+yabai -m rule --add app="^Sourcetree$" space="^Dev"
+yabai -m rule --add app="^Sequel Ace$" space="^Dev"
+
+# Messages
+yabai -m rule --add app="^Ferdi" space="^Messages"
+yabai -m rule --add app="^Postbox" space="^Messages"
+
+# Productivity
+yabai -m rule --add app="^Meistertask$" space="^Productivity"
+yabai -m rule --add app="^Todoist$" space="^Productivity"
+
+
+# ====== Signals ===============================
+
+yabai -m signal --add event=space_changed label="Update Hammerspoon Space on Space change" action="hs -A -c 'spacebar:update()'"
+yabai -m signal --add event=window_created label="Update Hammerspoon Space on window creation" action="hs -A -c 'spacebar:update()'"
+yabai -m signal --add event=window_destroyed label="Update Hammerspoon Space on window deletion" action="hs -A -c 'spacebar:update()'"
+yabai -m signal --add event=window_moved label="Update Hammerspoon Space on window moved" action="hs -A -c 'spacebar:update()'"
+yabai -m signal --add event=display_added label="Update Hammerspoon Space on display added" action="hs -A -c 'spacebar:update()'"
+yabai -m signal --add event=display_removed label="Update Hammerspoon Space on display removed" action="hs -A -c 'spacebar:update()'"
+
+yabai -m signal --add event=window_destroyed label="Focus window below cursor after closing window" action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_terminated label="Focus window below cursor after closing application" action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+
+# ====== Updater ===============================
+
+# YABAI_CERT=yabai-cert sh -c "$(curl -fsSL "https://git.io/update-yabai")" &
