@@ -34,7 +34,9 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 # Git Log
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
-
+# Gatekeeper
+alias gatekeeper-disable='sudo spctl --master-disable'
+alias gatekeeper-enable='sudo spctl --master-enable'
 
 ### Custom Functions ###
 # Youtube MP3 DL
