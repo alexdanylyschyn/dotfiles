@@ -6,6 +6,7 @@
 - clean: ['~', '~/.config']
 
 - link:
+    ~/.antigenrc: antigenrc
     ~/Brewfile: Brewfile
     ~/.config/kitty: kitty
     ~/.config/raycast.config: raycast.config
@@ -33,11 +34,6 @@
         stderr: true
     - 
         command: source ~/.dotfiles/brew.sh
-        stdin: true
-        stdout: true
-        stderr: true
-    -
-        command: source ~/.dotfiles/ohmyzsh.sh
         stdin: true
         stdout: true
         stderr: true
