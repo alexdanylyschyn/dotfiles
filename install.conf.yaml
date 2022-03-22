@@ -28,6 +28,11 @@
 - shell:
     - git submodule update --init --recursive
     - 
+        command: rm ~/.antigen/.lock
+        stdin: true
+        stdout: true
+        stderr: true
+    - 
         command: source ~/.dotfiles/macos.sh
         stdin: true
         stdout: true
