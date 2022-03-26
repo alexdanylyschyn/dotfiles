@@ -5,11 +5,11 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # ====== Variables =============================
 
-gaps_top="6"
-gaps_bottom="6"
-gaps_left="6"
-gaps_right="6"
-gaps_inner="6"
+gaps_top="2"
+gaps_bottom="2"
+gaps_left="2"
+gaps_right="2"
+gaps_inner="2"
 
 #normal_border_color="010101"
 #focused_border_color="808080"
