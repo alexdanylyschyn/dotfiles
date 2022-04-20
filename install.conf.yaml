@@ -17,6 +17,7 @@
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
     ~/.vim/pack/dist/start: vim/pack
+    ~/.zprofile: zprofile
     ~/.zshrc: zshrc
 
 - create:

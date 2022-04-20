@@ -36,4 +36,5 @@ function fnm-latest() {
 
 # Init shell
 eval "$(fnm env)"
+eval "$(pyenv init -)"
 eval "$(starship init zsh)"
