@@ -82,14 +82,10 @@ yabai -m rule --add label="mpv" app="^mpv$" manage=off
 yabai -m rule --add label="Keka" app="^Keka$" manage=off
 yabai -m rule --add label="TeamViewer" app="^TeamViewer$" manage=off
 yabai -m rule --add label="Transmission" app="^Transmission$" manage=off
-yabai -m rule --add label="VirtualBox" app="^VirtualBox$" manage=off
 yabai -m rule --add label="BetterTouchTool" app="^BetterTouchTool$" manage=off
 yabai -m rule --add label="Postbox" app="^Postbox$" title="^(General|Accounts|Display|Composition|Privacy|Security|Attachments|Advanced)$" manage=off
 yabai -m rule --add label="Keychain Access" app="^Keychain Access$" manage=off
-yabai -m rule --add label="SafeInCloud Password Manager" app="^SafeInCloud Password Manager$" manage=off
-yabai -m rule --add label="JetBrains Toolbox" app="^JetBrains Toolbox$" manage=off
 yabai -m rule --add label="Preview" app="^Preview$" manage=off
-yabai -m rule --add label="Dash" app="^Dash$" manage=off
 yabai -m rule --add label="Todoist" app="^Todoist$" title="^Preferences$" manage=off
 yabai -m rule --add label="Bartender" app="^Bartender$" manage=off
 yabai -m rule --add label="Authy" app="^Authy Desktop$" manage=off
@@ -97,8 +93,6 @@ yabai -m rule --add label="TimeMachine" app="^Time Machine$" manage=off
 yabai -m rule --add label="Surfshark" app="^Surfshark$" manage=off
 yabai -m rule --add label="LuLu" app="^LuLu$" manage=off
 yabai -m rule --add label="LuLu" app="^WindowSwitcher$" manage=off
-yabai -m rule --add label="Nova" app="^Nova$" title="^Launcher$" manage=off
-yabai -m rule --add label="Browserosaurus" app="^Browserosaurus$" manage=off
 yabai -m rule --add label="FaceTime" app="^FaceTime$" manage=off
 
 # ======== App to Space Management ==============
@@ -119,11 +113,8 @@ yabai -m rule --add app="^Transmit$" space="^Files"
 
 # Dev
 yabai -m rule --add app="^kitty$" space="^Dev"
-yabai -m rule --add app="^Sourcetree$" space="^Dev"
-yabai -m rule --add app="^Sequel Ace$" space="^Dev"
 
 # Messages
-yabai -m rule --add app="^Ferdi" space="^Messages"
 yabai -m rule --add app="^Postbox" space="^Messages"
 
 # Productivity
