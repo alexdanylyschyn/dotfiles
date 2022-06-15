@@ -69,6 +69,7 @@ yabai -m config window_border               off
 
 # ======== Management Rules ====================
 
+yabai -m rule --add label="1Password" app="^1Password$" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
 yabai -m rule --add label="App Store" app="^App Store$" manage=off
 yabai -m rule --add label="Bartender" app="^Bartender$" manage=off
