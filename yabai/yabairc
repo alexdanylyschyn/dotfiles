@@ -87,6 +87,7 @@ yabai -m rule --add label="LuLu" app="^WindowSwitcher$" manage=off
 yabai -m rule --add label="Postbox" app="^Postbox$" title="^(General|Accounts|Display|Composition|Privacy|Security|Attachments|Advanced)$" manage=off
 yabai -m rule --add label="Preview" app="^Preview$" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="SetApp Launcher" app="^SetappLauncher$" manage=off
 yabai -m rule --add label="Surfshark" app="^Surfshark$" manage=off
 yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
 yabai -m rule --add label="TeamViewer" app="^TeamViewer$" manage=off
