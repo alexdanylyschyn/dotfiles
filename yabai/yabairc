@@ -92,8 +92,6 @@ yabai -m rule --add label="TeamViewer" app="^TeamViewer$" manage=off
 yabai -m rule --add label="TimeMachine" app="^Time Machine$" manage=off
 yabai -m rule --add label="Todoist" app="^Todoist$" title="^Preferences$" manage=off
 yabai -m rule --add label="Transmission" app="^Transmission$" manage=off
-yabai -m rule --add label="mpv" app="^mpv$" manage=off
-yabai -m rule --add label="Authy" app="^Authy Desktop$" manage=off
 
 # ======== App to Space Management ==============
 
