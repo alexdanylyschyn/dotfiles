@@ -93,6 +93,7 @@ yabai -m rule --add label="System Preferences" app="^System Preferences$" manage
 yabai -m rule --add label="TeamViewer" app="^TeamViewer$" manage=off
 yabai -m rule --add label="TimeMachine" app="^Time Machine$" manage=off
 yabai -m rule --add label="Todoist" app="^Todoist$" title="^Preferences$" manage=off
+yabai -m rule --add label="TablePlus Connections" app="^TablePlus$" title="^(Connection...)$" manage=off
 yabai -m rule --add label="Transmission" app="^Transmission$" manage=off
 
 # ======== App to Space Management ==============
