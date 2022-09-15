@@ -3,3 +3,14 @@
 	email = alex@dyyy.dev
 [init]
 	defaultBranch = main
+[user]
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEhvEFh2uk4HpTMS/T/b4Dtb08FeWHdryQQZQNfTnQ01
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
