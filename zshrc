@@ -14,7 +14,7 @@ export PATH="$HOME/.node/bin:$PATH"
 alias ls="exa -lhGF"
 alias cat="bat"
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="curl --silent https://myipv4.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 # Gatekeeper
@@ -38,3 +38,4 @@ function fnm-latest() {
 eval "$(fnm env)"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
+
