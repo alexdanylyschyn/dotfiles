@@ -11,7 +11,7 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 
 ### Alias ###
-alias ls="exa -lhGF"
+alias ls="eza -lhF"
 alias cat="bat"
 # IP addresses
 alias ip="curl --silent https://myipv4.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
