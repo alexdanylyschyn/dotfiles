@@ -2,6 +2,7 @@
 
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+yabai -m config debug_output on
 
 # ====== Variables =============================
 
@@ -33,7 +34,6 @@ yabai -m config mouse_modifier              fn
 yabai -m config mouse_action1               move
 yabai -m config mouse_action2               resize
 
-yabai -m config window_topmost              off
 yabai -m config window_opacity              off
 yabai -m config window_shadow               float
 
@@ -59,25 +59,16 @@ yabai -m space 6 --label Messages
 yabai -m space 7 --label Productivity
 yabai -m space 8 --label Random
 
-
-# ====== Border settings =======================
-
-yabai -m config window_border               off
-#yabai -m config window_border_width         1
-#yabai -m config active_window_border_color  "0xE0${focused_border_color}"
-# yabai -m config insert_window_border_color  "0xE0${preselect_border_color}"
-#yabai -m config normal_window_border_color  "0x00${normal_border_color}"
-
 # ====== List of rules =========================
 
 # ======== Management Rules ====================
 
-yabai -m rule --add label="1Password" app="^1Password$" manage=off layer=below
+yabai -m rule --add label="1Password" app="^1Password$" manage=off sub-layer=below
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
 yabai -m rule --add label="App Store" app="^App Store$" manage=off
 yabai -m rule --add label="Bartender" app="^Bartender$" manage=off
 yabai -m rule --add label="BetterTouchTool" app="^BetterTouchTool$" manage=off
-yabai -m rule --add label="Calculator" app="^Calculator$" manage=off layer=below
+yabai -m rule --add label="Calculator" app="^Calculator$" manage=off sub-layer=below
 yabai -m rule --add label="Dictionary" app="^Dictionary$" manage=off
 yabai -m rule --add label="FaceTime" app="^FaceTime$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
@@ -88,18 +79,19 @@ yabai -m rule --add label="Keychain Access" app="^Keychain Access$" manage=off
 yabai -m rule --add label="LuLu" app="^LuLu$" manage=off
 yabai -m rule --add label="WindowSwitcher" app="^WindowSwitcher$" manage=off
 yabai -m rule --add label="Postbox" app="^Postbox$" title="^(General|Accounts|Display|Composition|Privacy|Security|Attachments|Advanced)$" manage=off
-yabai -m rule --add label="Preview" app="^Preview$" manage=off layer=below
+yabai -m rule --add label="Preview" app="^Preview$" manage=off sub-layer=below
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="Edge" app="^Microsoft Edge$" title="^Picture in Picture$" manage=off
 yabai -m rule --add label="Excel" app="^Microsoft Excel$" title="^Find & Replace$" manage=off
 yabai -m rule --add label="SetApp Launcher" app="^SetappLauncher$" manage=off
 yabai -m rule --add label="Surfshark" app="^Surfshark$" manage=off
 yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
-yabai -m rule --add label="TeamViewer" app="^TeamViewer$" manage=off layer=below
+yabai -m rule --add label="TeamViewer" app="^TeamViewer$" manage=off sub-layer=below
 yabai -m rule --add label="TimeMachine" app="^Time Machine$" manage=off
 yabai -m rule --add label="Todoist" app="^Todoist$" title="^Preferences$" manage=off
 yabai -m rule --add label="TablePlus Connections" app="^TablePlus$" title="^(Connection...)$" manage=off
-yabai -m rule --add label="Transmission" app="^Transmission$" manage=off layer=below
+yabai -m rule --add label="Transmission" app="^Transmission$" manage=off sub-layer=below
+yabai -m rule --add app="^Browserosaurus$" manage=off
 
 # ======== App to Space Management ==============
 
@@ -130,14 +122,22 @@ yabai -m rule --add app="^Todoist$" space="^Productivity"
 yabai -m rule --add app="^Spotify$" space="^Random"
 yabai -m rule --add app="^pascom Client$" space="^Random"
 
+yabai -m rule --apply
 # ====== Signals ===============================
 
-yabai -m signal --add event=space_changed label="Update Hammerspoon Space on Space change" action="hs -A -c 'spacebar:update()'"
-yabai -m signal --add event=window_created label="Update Hammerspoon Space on window creation" action="hs -A -c 'spacebar:update()'"
-yabai -m signal --add event=window_destroyed label="Update Hammerspoon Space on window deletion" action="hs -A -c 'spacebar:update()'"
-yabai -m signal --add event=window_moved label="Update Hammerspoon Space on window moved" action="hs -A -c 'spacebar:update()'"
-yabai -m signal --add event=display_added label="Update Hammerspoon Space on display added" action="hs -A -c 'spacebar:update()'"
-yabai -m signal --add event=display_removed label="Update Hammerspoon Space on display removed" action="hs -A -c 'spacebar:update()'"
+#yabai -m signal --add event=space_changed label="Update Hammerspoon Space on Space change" action="hs -A -c 'spacebar:update()'"
+#yabai -m signal --add event=window_created label="Update Hammerspoon Space on window creation" action="hs -A -c 'spacebar:update()'"
+#yabai -m signal --add event=window_destroyed label="Update Hammerspoon Space on window deletion" action="hs -A -c 'spacebar:update()'"
+#yabai -m signal --add event=window_moved label="Update Hammerspoon Space on window moved" action="hs -A -c 'spacebar:update()'"
+#yabai -m signal --add event=display_added label="Update Hammerspoon Space on display added" action="hs -A -c 'spacebar:update()'"
+#yabai -m signal --add event=display_removed label="Update Hammerspoon Space on display removed" action="hs -A -c 'spacebar:update()'"
+
+yabai -m signal --add event=space_changed label="Update Hammerspoon Space on Space change" action="osascript -e 'tell application \"BetterTouchTool\"' -e 'refresh_widget \"DD66DB15-2536-4353-AEC7-A9F5D668A1B7\"' -e 'end tell'"
+yabai -m signal --add event=window_created label="Update Hammerspoon Space on window creation" action="osascript -e 'tell application \"BetterTouchTool\"' -e 'refresh_widget \"DD66DB15-2536-4353-AEC7-A9F5D668A1B7\"' -e 'end tell'"
+yabai -m signal --add event=window_destroyed label="Update Hammerspoon Space on window deletion" action="osascript -e 'tell application \"BetterTouchTool\"' -e 'refresh_widget \"DD66DB15-2536-4353-AEC7-A9F5D668A1B7\"' -e 'end tell'"
+yabai -m signal --add event=window_moved label="Update Hammerspoon Space on window moved" action"osascript -e 'tell application \"BetterTouchTool\"' -e 'refresh_widget \"DD66DB15-2536-4353-AEC7-A9F5D668A1B7\"' -e 'end tell'"
+yabai -m signal --add event=display_added label="Update Hammerspoon Space on display added" action="osascript -e 'tell application \"BetterTouchTool\"' -e 'refresh_widget \"DD66DB15-2536-4353-AEC7-A9F5D668A1B7\"' -e 'end tell'"
+yabai -m signal --add event=display_removed label="Update Hammerspoon Space on display removed" action="osascript -e 'tell application \"BetterTouchTool\"' -e 'refresh_widget \"DD66DB15-2536-4353-AEC7-A9F5D668A1B7\"' -e 'end tell'"
 
 yabai -m signal --add event=window_destroyed label="Focus window below cursor after closing window" action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated label="Focus window below cursor after closing application" action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
