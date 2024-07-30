@@ -116,7 +116,6 @@ yabai -m rule --add app="^Microsoft Outlook" space="^Messages"
 
 # Productivity
 yabai -m rule --add app="^Meistertask$" space="^Productivity"
-yabai -m rule --add app="^Todoist$" space="^Productivity"
 
 # Random
 yabai -m rule --add app="^Spotify$" space="^Random"
