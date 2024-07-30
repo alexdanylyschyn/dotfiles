@@ -2,9 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "hammerspoon/spacebar"]
-	path = hammerspoon/spacebar
-	url = https://github.com/alexdanylyschyn/spacebar.git
 [submodule "vim/pack/vim-airline"]
 	path = vim/pack/vim-airline
 	url = https://github.com/vim-airline/vim-airline
