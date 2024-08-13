@@ -12,6 +12,7 @@
     ~/.config/raycast.config: raycast.config
     ~/.config/starshop.toml: starship.toml
     ~/.config/yabai: yabai
+    ~/.emacs.d: emacs
     ~/.dotfiles: ''
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc

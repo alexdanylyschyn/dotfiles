@@ -35,6 +35,10 @@ function fnm-latest() {
   fnm exec --using=$1 corepack enable
 }
 
+function e() {
+  open -a /Applications/Emacs.app $1
+}
+
 # Init shell
 eval "$(fnm env)"
 eval "$(pyenv init -)"
