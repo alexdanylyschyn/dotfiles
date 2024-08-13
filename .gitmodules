@@ -1,6 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
-	url = https://github.com/anishathalye/dotbot
+	url = https://github.com/alexdanylyschyn/dotbot.git
 	ignore = dirty
 [submodule "vim/pack/vim-airline"]
 	path = vim/pack/vim-airline
