@@ -7,6 +7,10 @@
 (load-theme 'modus-vivendi)             ; Dark theme
 
 ;; Org Modern Styling
+(set-face-attribute 'default nil :family "Iosevka")
+(set-face-attribute 'variable-pitch nil :family "Iosevka Aile")
+;(set-face-attribute 'org-modern-symbol nil :family "Iosevka")
+
 ;; Add frame borders and window dividers
 (modify-all-frames-parameters
  '((right-divider-width . 40)
@@ -55,7 +59,8 @@
 (use-package treemacs
   :ensure t
   :bind
-  (("M-0" . treemacs-select-window)))
+  (("M-0" . treemacs-select-window)
+   ("M-=" . treemacs)))
 
 ;; Setup ace-window
 (use-package ace-window
@@ -75,6 +80,10 @@
   '((sequence "TODO" "NEXT" "IN-PROGRESS" "WAITING" "DONE"))) ; set todo states
 
 (setq org-log-done 'time)
+(setq org-agenda-skip-function-global '(org-agenda-skip-entry-if 'todo 'done))
+(setq org-deadline-warning-days 2)
+(setq org-agenda-files '("~/org"))
+(setq org-startup-indented t)
 
 ;;org mode keybindings
 (add-hook
@@ -82,18 +91,3 @@
       (lambda ()
 	(local-set-key (kbd "C-c i") #'org-indent-mode)
       ))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-files '("~/org"))
- '(org-sidebar-default-fns '(org-sidebar--upcoming-items org-sidebar--todo-items))
- '(package-selected-packages '(org-modern treemacs ace-window)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "IosevkaTerm Nerd Font" :foundry "nil" :slant normal :weight regular :height 120 :width normal)))))
