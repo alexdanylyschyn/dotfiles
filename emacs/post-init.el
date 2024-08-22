@@ -54,13 +54,40 @@
 ;; Add global keybindings
 (global-set-key (kbd "C-c a") #'org-agenda)
 
-;; Setup treemacs
+;; Setup IDO
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
 
+;; Setup PHP Mode
+(use-package php-mode
+  :ensure t
+  )
+
+
+;; Setup projectile
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)))
+
+;; Setup treemacs
 (use-package treemacs
   :ensure t
+  :config
+  (progn
+    (treemacs-project-follow-mode t)
+   )
   :bind
   (("M-0" . treemacs-select-window)
    ("M-=" . treemacs)))
+
+(use-package treemacs-projectile
+  :after (treemacs projectile)
+  :ensure t)
 
 ;; Setup ace-window
 (use-package ace-window
