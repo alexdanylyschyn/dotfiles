@@ -7,14 +7,14 @@
 (load-theme 'modus-vivendi)             ; Dark theme
 
 ;; Org Modern Styling
-(set-face-attribute 'default nil :family "Iosevka")
+(set-face-attribute 'default nil :family "IosevkaTerm Nerd Font")
 (set-face-attribute 'variable-pitch nil :family "Iosevka Aile")
 ;(set-face-attribute 'org-modern-symbol nil :family "Iosevka")
 
 ;; Add frame borders and window dividers
-(modify-all-frames-parameters
- '((right-divider-width . 40)
-   (internal-border-width . 40)))
+;(modify-all-frames-parameters
+; '((right-divider-width . 40)
+;   (internal-border-width . 40)))
 (dolist (face '(window-divider
                 window-divider-first-pixel
                 window-divider-last-pixel))
@@ -53,6 +53,7 @@
 
 ;; Add global keybindings
 (global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Setup IDO
 (setq ido-enable-flex-matching t)
@@ -64,6 +65,23 @@
   :ensure t
   )
 
+;; Setup Web Mode
+(use-package web-mode
+  :ensure t
+  :mode
+  (("\\.phtml\\'" . web-mode)
+   ("\\.php\\'" . web-mode)
+   ("\\.tpl\\'" . web-mode)
+   ("\\.[agj]sp\\'" . web-mode)
+   ("\\.as[cp]x\\'" . web-mode)
+   ("\\.erb\\'" . web-mode)
+   ("\\.mustache\\'" . web-mode)
+   ("\\.djhtml\\'" . web-mode)
+   ("\\.mjml\\'" . web-mode))
+  :config
+  (setq web-mode-engines-alist
+        '(("smarty" . "\\.mjml\\'")))
+  )
 
 ;; Setup projectile
 (use-package projectile
