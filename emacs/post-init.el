@@ -3,6 +3,12 @@
 ;; Wrap Lines by default
 (global-visual-line-mode 1)
 
+;; Add Tabline
+(global-tab-line-mode 1)
+
+;; Add Tab Bar
+(tab-bar-mode 1)
+
 ;; theme
 (load-theme 'modus-vivendi)             ; Dark theme
 
@@ -34,6 +40,15 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
+
+;; Garbage Collection
+(use-package gcmh
+  :ensure t
+  :hook (after-init . gcmh-mode)
+  :custom
+  (gcmh-idle-delay 'auto)
+  (gcmh-auto-idle-delay-factor 10)
+  (gcmh-low-cons-threshold minimal-emacs-gc-cons-threshold))
 
 ;; Setup PHP Mode
 (use-package php-mode

@@ -14,6 +14,7 @@
     ~/.config/yabai: yabai
     ~/.emacs.d/early-init.el: minimal-emacs.d/early-init.el
     ~/.emacs.d/init.el: minimal-emacs.d/init.el
+    ~/.emacss.d/pre-early-init.el: emacs/pre-early-init.el
     ~/.emacs.d/post-init.el: emacs/post-init.el
     ~/.emacs.d/post-early-init.el: emacs/post-early-init.el
     ~/.dotfiles: ''
