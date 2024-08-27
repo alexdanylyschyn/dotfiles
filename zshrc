@@ -1,5 +1,8 @@
 export TERM="xterm-256color"
 
+# Brew auto completion
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 # Antigen
 source "/opt/homebrew/Cellar/antigen/2.2.3/share/antigen/antigen.zsh"
 antigen init ~/.antigenrc
@@ -13,8 +16,10 @@ export PATH="$HOME/.node/bin:$PATH"
 ### Alias ###
 alias ls="eza -lhF"
 alias cat="bat"
+alias ld="lazydocker"
 # IP addresses
 alias ip="curl --silent https://myipv4.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
+alias ip4="curl --silent https://myipv4.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
 alias ip6="curl --silent https://myipv6.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
