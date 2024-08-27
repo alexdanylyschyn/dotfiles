@@ -1,5 +1,11 @@
 ;;; post-init.el --- post-init file -*- no-byte-compile: t; lexical-binding: t; -*-
 
+;; Setup autosave and backup file directory
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 ;; Wrap Lines by default
 (global-visual-line-mode 1)
 
