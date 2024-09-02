@@ -12,9 +12,6 @@
 ;; Add Tabline
 (global-tab-line-mode 1)
 
-;; Add Tab Bar
-(tab-bar-mode 1)
-
 ;; theme
 (load-theme 'modus-vivendi)             ; Dark theme
 
