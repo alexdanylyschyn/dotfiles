@@ -10,7 +10,7 @@
 (global-visual-line-mode 1)
 
 ;; Add Tabline
-(global-tab-line-mode 1)
+;(global-tab-line-mode 1)
 
 ;; theme
 (load-theme 'modus-vivendi)             ; Dark theme
@@ -19,6 +19,7 @@
 (set-face-attribute 'default nil :family "Iosevka Term")
 (set-face-attribute 'variable-pitch nil :family "Iosevka Aile")
 ;(set-face-attribute 'org-modern-symbol nil :family "Iosevka")
+(setq-default line-spacing 0.2)
 
 ;; Add frame borders and window dividers
 ;(modify-all-frames-parameters
@@ -44,6 +45,10 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 
+;; Setup electricity
+(setq electric-pair-mode t)
+(setq electric-layout-mode t)
+
 ;; Garbage Collection
 (use-package gcmh
   :ensure t
@@ -52,6 +57,13 @@
   (gcmh-idle-delay 'auto)
   (gcmh-auto-idle-delay-factor 10)
   (gcmh-low-cons-threshold minimal-emacs-gc-cons-threshold))
+
+;; Setup magit
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status)
+         ("C-c g" . magit-dispatch)
+         ("C-c f" . magit-file-dispatch)))
 
 ;; Setup PHP Mode
 (use-package php-mode
@@ -75,6 +87,15 @@
   (setq web-mode-engines-alist
         '(("smarty" . "\\.mjml\\'")))
   )
+
+;; Setup Treesitter Modes
+(use-package treesit-auto
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
+
 
 ;; Setup projectile
 (use-package projectile
@@ -114,6 +135,7 @@
   (progn
     (setq org-todo-keywords
           '((sequence "TODO" "NEXT" "IN-PROGRESS" "WAITING" "DONE"))) ; set todo states
+    (setq calendar-week-start-day 1) ; set Calendar start day to monday
 
     (setq org-log-done 'time)
     (setq org-agenda-skip-function-global '(org-agenda-skip-entry-if 'todo 'done))
@@ -156,7 +178,7 @@
 ;; Setup org-modern
 (use-package org-modern
   :ensure t
-  :after org)
-(add-hook 'org-mode-hook #'org-modern-mode)
-(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+  :after org
+  :hook (org-mode . org-modern-mode)
+  :hook (org-agenda-finalize . order-modern-agenda))
 

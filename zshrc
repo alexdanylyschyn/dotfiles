@@ -12,11 +12,14 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 ### Alias ###
 alias ls="eza -lhF"
 alias cat="bat"
 alias ld="lazydocker"
+alias lg="lazygit"
+alias ghr="gh run watch"
 # IP addresses
 alias ip="curl --silent https://myipv4.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
 alias ip4="curl --silent https://myipv4.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
@@ -30,7 +33,7 @@ alias gatekeeper-enable='sudo spctl --master-enable'
 ### Custom Functions ###
 # Youtube MP3 DL
 function yt-mp3() {
-  youtube-dl --extract-audio --audio-format mp3 --prefer-ffmpeg $1
+  yt-dlp -x --audio-quality 0 $1
 }
 
 function fnm-latest() {
