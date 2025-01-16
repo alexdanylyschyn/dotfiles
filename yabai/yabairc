@@ -10,7 +10,7 @@ gaps_top="0"
 gaps_bottom="0"
 gaps_left="0"
 gaps_right="0"
-gaps_inner="2"
+gaps_inner="1"
 
 #normal_border_color="010101"
 #focused_border_color="808080"
@@ -40,8 +40,8 @@ yabai -m config window_shadow               float
 yabai -m config active_window_opacity       1.0
 yabai -m config normal_window_opacity       0.9
 yabai -m config split_ratio                 0.5
-yabai -m config auto_balance                on
-
+yabai -m config auto_balance                x-axis
+yabai -m config window_insertion_point      focused
 # yabai -m config window_animation_duration   0
 
 # ====== Space Settings ========================
