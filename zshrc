@@ -44,7 +44,7 @@ function fnm-latest() {
 }
 
 function e() {
-  open -a /Applications/Emacs.app $1
+  open -a /Applications/EmacsClient.app $1
 }
 
 # Init shell
