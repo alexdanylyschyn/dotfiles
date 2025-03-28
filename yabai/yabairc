@@ -76,22 +76,17 @@ yabai -m rule --add label="Installer" app="^Installer$" manage=off
 yabai -m rule --add label="KeeWeb" app="^KeeWeb$" manage=off
 yabai -m rule --add label="Keka" app="^Keka$" manage=off
 yabai -m rule --add label="Keychain Access" app="^Keychain Access$" manage=off
-yabai -m rule --add label="LuLu" app="^LuLu$" manage=off
 yabai -m rule --add label="WindowSwitcher" app="^WindowSwitcher$" manage=off
-yabai -m rule --add label="Postbox" app="^Postbox$" title="^(General|Accounts|Display|Composition|Privacy|Security|Attachments|Advanced)$" manage=off
 yabai -m rule --add label="Preview" app="^Preview$" manage=off sub-layer=below
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
-yabai -m rule --add label="Edge" app="^Microsoft Edge$" title="^Picture in Picture$" manage=off
 yabai -m rule --add label="Excel" app="^Microsoft Excel$" title="^Find & Replace$" manage=off
 yabai -m rule --add label="SetApp Launcher" app="^SetappLauncher$" manage=off
-yabai -m rule --add label="Surfshark" app="^Surfshark$" manage=off
 yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
 yabai -m rule --add label="TeamViewer" app="^TeamViewer$" manage=off sub-layer=below
 yabai -m rule --add label="TimeMachine" app="^Time Machine$" manage=off
-yabai -m rule --add label="Todoist" app="^Todoist$" title="^Preferences$" manage=off
 yabai -m rule --add label="TablePlus Connections" app="^TablePlus$" title="^(Connection...)$" manage=off
 yabai -m rule --add label="Transmission" app="^Transmission$" manage=off sub-layer=below
-yabai -m rule --add app="^Browserosaurus$" manage=off
+yabai -m rule --add label="BusyCal" app="^BusyCal$" manage=off
 
 # ======== App to Space Management ==============
 
@@ -111,11 +106,7 @@ yabai -m rule --add app="^TablePlus$" space="^IDE"
 yabai -m rule --add app="^kitty$" space="^Dev"
 
 # Messages
-yabai -m rule --add app="^Postbox" space="^Messages"
 yabai -m rule --add app="^Microsoft Outlook" space="^Messages"
-
-# Productivity
-yabai -m rule --add app="^Meistertask$" space="^Productivity"
 
 # Random
 yabai -m rule --add app="^Spotify$" space="^Random"
