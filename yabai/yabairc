@@ -18,30 +18,29 @@ gaps_inner="1"
 
 # ====== Tiling settings =======================
 
-yabai -m config layout                      bsp
+yabai -m config layout bsp
 
+yabai -m config top_padding "${gaps_top}"
+yabai -m config bottom_padding "${gaps_bottom}"
+yabai -m config left_padding "${gaps_left}"
+yabai -m config right_padding "${gaps_right}"
+yabai -m config window_gap "${gaps_inner}"
 
-yabai -m config top_padding                 "${gaps_top}"
-yabai -m config bottom_padding              "${gaps_bottom}"
-yabai -m config left_padding                "${gaps_left}"
-yabai -m config right_padding               "${gaps_right}"
-yabai -m config window_gap                  "${gaps_inner}"
+yabai -m config mouse_follows_focus on
+yabai -m config focus_follows_mouse off
 
-yabai -m config mouse_follows_focus         on
-yabai -m config focus_follows_mouse         off
+yabai -m config mouse_modifier fn
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
 
-yabai -m config mouse_modifier              fn
-yabai -m config mouse_action1               move
-yabai -m config mouse_action2               resize
+yabai -m config window_opacity off
+yabai -m config window_shadow float
 
-yabai -m config window_opacity              off
-yabai -m config window_shadow               float
-
-yabai -m config active_window_opacity       1.0
-yabai -m config normal_window_opacity       0.9
-yabai -m config split_ratio                 0.5
-yabai -m config auto_balance                x-axis
-yabai -m config window_insertion_point      focused
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.9
+yabai -m config split_ratio 0.5
+# yabai -m config auto_balance                x-axis
+yabai -m config window_insertion_point focused
 # yabai -m config window_animation_duration   0
 
 # ====== Space Settings ========================
@@ -79,7 +78,8 @@ yabai -m rule --add label="Keychain Access" app="^Keychain Access$" manage=off
 yabai -m rule --add label="WindowSwitcher" app="^WindowSwitcher$" manage=off
 yabai -m rule --add label="Preview" app="^Preview$" manage=off sub-layer=below
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
-yabai -m rule --add label="Excel" app="^Microsoft Excel$" title="^Find & Replace$" manage=off
+yabai -m rule --add label="Excel" app="^Microsoft Excel$" manage=on
+yabai -m rule --add label="Excel Modals" app="^Microsoft Excel$" title="^Find & Replace$" manage=off
 yabai -m rule --add label="SetApp Launcher" app="^SetappLauncher$" manage=off
 yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
 yabai -m rule --add label="TeamViewer" app="^TeamViewer$" manage=off sub-layer=below
@@ -87,6 +87,7 @@ yabai -m rule --add label="TimeMachine" app="^Time Machine$" manage=off
 yabai -m rule --add label="TablePlus Connections" app="^TablePlus$" title="^(Connection...)$" manage=off
 yabai -m rule --add label="Transmission" app="^Transmission$" manage=off sub-layer=below
 yabai -m rule --add label="BusyCal" app="^BusyCal$" manage=off
+yabai -m rule --add label="WireGuard" app="^WireGuard$" manage=off
 
 # ======== App to Space Management ==============
 

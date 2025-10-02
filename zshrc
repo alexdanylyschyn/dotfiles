@@ -20,6 +20,9 @@ alias cat="bat"
 alias ld="lazydocker"
 alias lg="lazygit"
 alias ghr="gh run watch"
+alias e="emacsclient -c -n -a emacs $1"
+alias org="emacsclient -c -n -a emacs $HOME/org"
+alias n="nvim $1"
 # IP addresses
 alias ip="curl --silent https://myipv4.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
 alias ip4="curl --silent https://myipv4.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
@@ -43,12 +46,11 @@ function fnm-latest() {
   fnm exec --using=$1 corepack enable
 }
 
-function e() {
-  open -a /Applications/EmacsClient.app $1
-}
-
 # Init shell
 eval "$(fnm env)"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
 
+
+# Created by `pipx` on 2025-06-23 11:21:56
+export PATH="$PATH:/Users/alex/.local/bin"

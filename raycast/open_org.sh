@@ -8,4 +8,4 @@
 # Optional parameters:
 # @raycast.packageName emacs
 
-open -a /Applications/EmacsClient.app ~/org
+emacsclient -c -n -a emacs "$HOME/org"
