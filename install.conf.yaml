@@ -23,6 +23,7 @@
     ~/.vim/pack/dist/start: vim/pack
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
+    ~/.config/nvim: nvim
 
 - create:
     - ~/Screenshots
