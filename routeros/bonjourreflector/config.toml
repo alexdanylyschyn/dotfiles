@@ -1,0 +1,44 @@
+net_interface = "veth1-mdns"
+
+[devices]
+
+[devices."F4:34:F0:47:C4:D2"]
+description = "Daisy"
+origin_pool = 20
+shared_pools = [30, 40]
+
+[devices."02:17:91:02:3C:7B"]
+description = "Home Assistant"
+origin_pool = 30
+shared_pools = [20, 40]
+
+[devices."00:BF:AF:DA:0A:CE"]
+description = "Tracy"
+origin_pool = 20
+shared_pools = [30, 40]
+
+[devices."BC:24:11:65:2B:F2"]
+description = "Jellyfin"
+origin_pool = 30
+shared_pools = [20, 40]
+
+[devices."10:2B:41:1F:62:6E"]
+description = "Soundbar"
+origin_pool = 40
+shared_pools = [20, 30]
+
+[devices."80:60:B7:88:C4:3D"]
+description = "PS5"
+origin_pool = 20
+shared_pools = [30, 40]
+
+[vlan]
+
+[vlan.20]
+ip_source = "10.9.20.2"
+
+[vlan.30]
+ip_source = "10.9.30.2"
+
+[vlan.40]
+ip_source = "10.9.40.2"
