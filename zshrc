@@ -48,6 +48,8 @@ function fnm-latest() {
 }
 
 # Init shell
+source <(fzf --zsh)
+eval "$(zoxide init --cmd cd zsh)"
 eval "$(fnm env)"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
