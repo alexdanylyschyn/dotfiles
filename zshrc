@@ -24,6 +24,7 @@ alias e="emacsclient -c -n -a emacs $1"
 #alias org="emacsclient -c -n -a emacs $HOME/org"
 alias org="nvim $HOME/org"
 alias n="nvim $1"
+alias z="zellij -l welcome"
 # IP addresses
 alias ip="curl --silent https://myipv4.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
 alias ip4="curl --silent https://myipv4.p1.opendns.com/get_my_ip | jq -r '.ip|tostring'"
@@ -53,7 +54,6 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(fnm env)"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
-eval "$(zellij setup --generate-auto-start zsh)"
 
 # Created by `pipx` on 2025-06-23 11:21:56
 export PATH="$PATH:/Users/alex/.local/bin"
