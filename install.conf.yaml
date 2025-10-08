@@ -3,7 +3,7 @@
       create: true
       relink: true
 
-- clean: ['~', '~/.config']
+- clean: ["~", "~/.config"]
 
 - link:
     ~/.antigenrc: antigenrc
@@ -17,13 +17,14 @@
     ~/.emacs.d/pre-early-init.el: emacs/pre-early-init.el
     ~/.emacs.d/post-init.el: emacs/post-init.el
     ~/.emacs.d/post-early-init.el: emacs/post-early-init.el
-    ~/.dotfiles: ''
+    ~/.dotfiles: ""
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
     ~/.vim/pack/dist/start: vim/pack
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
     ~/.config/nvim: nvim
+    ~/.config/zellij: zellij
 
 - create:
     - ~/Screenshots
@@ -31,22 +32,19 @@
     - ~/.vim/backups
     - ~/.vim/undo
     - ~/.emacs.d
-  
+
 - shell:
     - git submodule update --init --recursive
-    - 
-        command: rm ~/.antigen/.lock
-        stdin: true
-        stdout: true
-        stderr: true
-    - 
-        command: source ~/.dotfiles/macos.sh
-        stdin: true
-        stdout: true
-        stderr: true
-    - 
-        command: source ~/.dotfiles/brew.sh
-        stdin: true
-        stdout: true
-        stderr: true
+    - command: rm ~/.antigen/.lock
+      stdin: true
+      stdout: true
+      stderr: true
+    - command: source ~/.dotfiles/macos.sh
+      stdin: true
+      stdout: true
+      stderr: true
+    - command: source ~/.dotfiles/brew.sh
+      stdin: true
+      stdout: true
+      stderr: true
     - vim -c "helptags ALL"

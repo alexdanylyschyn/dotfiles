@@ -53,7 +53,7 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(fnm env)"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
-
+eval "$(zellij setup --generate-auto-start zsh)"
 
 # Created by `pipx` on 2025-06-23 11:21:56
 export PATH="$PATH:/Users/alex/.local/bin"
