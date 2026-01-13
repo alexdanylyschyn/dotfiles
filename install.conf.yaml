@@ -6,7 +6,6 @@
 - clean: ["~", "~/.config"]
 
 - link:
-    ~/.antigenrc: antigenrc
     ~/Brewfile: Brewfile
     ~/.config/kitty: kitty
     ~/.config/raycast.config: raycast.config
@@ -22,6 +21,7 @@
     ~/.vimrc: vimrc
     ~/.vim/pack/dist/start: vim/pack
     ~/.zprofile: zprofile
+    ~/.zsh_plugins.txt: zsh_plugins.txt
     ~/.zshrc: zshrc
     ~/.config/nvim: nvim
     ~/.config/zellij: zellij
@@ -35,10 +35,6 @@
 
 - shell:
     - git submodule update --init --recursive
-    - command: rm ~/.antigen/.lock
-      stdin: true
-      stdout: true
-      stderr: true
     - command: source ~/.dotfiles/macos.sh
       stdin: true
       stdout: true

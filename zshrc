@@ -3,9 +3,8 @@ export TERM="xterm-256color"
 # Brew auto completion
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-# Antigen
-source "/opt/homebrew/Cellar/antigen/2.2.3/share/antigen/antigen.zsh"
-antigen init ~/.antigenrc
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load
 
 # Setup path
 export PATH="/usr/local/sbin:$PATH"

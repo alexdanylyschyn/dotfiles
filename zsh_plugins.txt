@@ -1,0 +1,7 @@
+
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
+
+mattmc3/zephyr path:plugins/macos
+mattmc3/zephyr path:plugins/completion
+mattmc3/zephyr path:plugins/compstyle
