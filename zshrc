@@ -5,13 +5,7 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
-
-# Setup path
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
-export PATH="$HOME/.node/bin:$PATH"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+zle_highlight=('paste:none')
 
 ### Alias ###
 alias ls="eza -lhF"
